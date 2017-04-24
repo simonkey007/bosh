@@ -54,7 +54,7 @@ print_git_state
 
 bundle install --local
 
-mv ./bosh-src/ci/scripts/nats-server /usr/local/bin/nats-server
+mv ./bosh-src/ci/scripts/nats-server /usr/local/bin/
 chmod +x /usr/local/bin/nats-server
 
 set +e
