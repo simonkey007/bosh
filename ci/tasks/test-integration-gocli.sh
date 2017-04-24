@@ -54,7 +54,11 @@ print_git_state
 
 bundle install --local
 
+mv ./bosh-src/ci/scripts/nats-server /usr/local/bin/nats-server
+chmod +x /usr/local/bin/nats-server
+
 set +e
 bundle exec rake --trace spec:integration_gocli
 
 grep -Ri "Agent exited with error:" tmp/integration-tests-workspace 2>/dev/null
+

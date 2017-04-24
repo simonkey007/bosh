@@ -19,7 +19,7 @@ gem 'json', '=1.8.3'
 
 gem 'talentbox-delayed_job_sequel', '~> 4.1'
 
-gem 'bundler', '~>1.11.0'
+gem 'bundler', '~>1.14'
 
 group :production do
   # this was pulled from bosh_aws_registry's Gemfile.  Why does it exist?
@@ -44,19 +44,20 @@ group :development, :test do
   gem 'parallel_tests', '~> 2.0'
   gem 'rack-test'
   gem 'webmock'
-  gem 'fakefs'
   gem 'sinatra'
   gem 'sinatra-contrib'
 
-  # avoid upgrading until this issue is resolved: https://github.com/eventmachine/eventmachine/issues/633
-  gem 'eventmachine', '1.0.4'
+  # Forcing to be version 0.6.7 because of patches.rb
+  gem 'fakefs', '=0.6.7'
+
+  gem 'eventmachine', '~>1.2'
 
   # for director
   gem 'machinist', '~>1.0'
 
   # for root level specs
   gem 'rest-client'
-  gem 'nats'
+  gem 'nats', '~>0.8'
 
   gem 'sqlite3'
   gem 'timecop', '~>0.7.1'
